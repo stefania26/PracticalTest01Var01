@@ -110,12 +110,15 @@ navigate=(Button)findViewById(R.id.navigateTo);
 			@Override
 			public void onClick(View v) {
 				String s="";
+				int l1 = s.length();
 				if (checkbox1.isChecked())
 					s=s+getResources().getString(R.string.phone);
 				if (checkbox2.isChecked())
-					s=s+","+getResources().getString(R.string.email);
+					if (s.length()==l1) s=s=s+getResources().getString(R.string.email);
+					else s=s+","+getResources().getString(R.string.email);
 				if (checkbox3.isChecked())
-					s=s+","+getResources().getString(R.string.instantmess);
+					if (s.length()==l1) s=s+getResources().getString(R.string.instantmess);
+					else s=s+","+getResources().getString(R.string.instantmess);
 				Intent i=new Intent(PracticalTestVar01MainActivity.this, PracticalTest01Var01SecondaryActivity.class);
 				i.putExtra("allBoxes",s );
 				startActivityForResult(i, SECONDARY_ACTIVITY_REQUEST_CODE);
