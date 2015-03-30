@@ -114,7 +114,7 @@ navigate=(Button)findViewById(R.id.navigateTo);
 				if (checkbox1.isChecked())
 					s=s+getResources().getString(R.string.phone);
 				if (checkbox2.isChecked())
-					if (s.length()==l1) s=s=s+getResources().getString(R.string.email);
+					if (s.length()==l1) s=s+getResources().getString(R.string.email);
 					else s=s+","+getResources().getString(R.string.email);
 				if (checkbox3.isChecked())
 					if (s.length()==l1) s=s+getResources().getString(R.string.instantmess);
