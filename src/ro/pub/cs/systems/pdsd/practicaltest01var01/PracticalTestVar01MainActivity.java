@@ -23,6 +23,7 @@ public class PracticalTestVar01MainActivity extends Activity {
 	EditText textNumber;
 	private Button navigate;
 	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -32,17 +33,18 @@ public class PracticalTestVar01MainActivity extends Activity {
 		checkbox2=(CheckBox)findViewById(R.id.checkBox2);
 		checkbox3=(CheckBox)findViewById(R.id.checkBox3);
 		textNumber=(EditText)findViewById(R.id.textnumber);
-		
+		numberOfEvents=0;	
 		if (savedInstanceState != null) {
 			if (savedInstanceState.getBoolean("box1")) checkbox1.setChecked(true);
 			if (savedInstanceState.getBoolean("box2")) checkbox2.setChecked(true);
 			if (savedInstanceState.getBoolean("box3")) checkbox3.setChecked(true);
+			numberOfEvents=Integer.parseInt(savedInstanceState.getString("text"));
 			textNumber.setText(savedInstanceState.getString("text"));
 		}
 		
 		
 		
-		numberOfEvents=0;
+		
 		
 		
 		checkbox1.setOnCheckedChangeListener(new OnCheckedChangeListener() {
